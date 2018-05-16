@@ -47,7 +47,7 @@
             }
         </style>
     </head>
-	<body>
+	<body onload="load();">
     <link rel="icon" href="send.jpg">
     <div style="float: left; width: 400px; height: 100%; border-right: 1px solid grey">
         <Br><Br>
@@ -129,7 +129,7 @@
         function upgradeMouse(){
         
         	if(Game.mousePrice <= Game.money){
-        		Game.mouseScore = Game.mouseScore * 2;
+        		Game.mouseScore = onload="codeAddress();"Game.mouseScore * 2;
         		Game.mousePrice = Game.mousePrice * 1.64;
         		document.getElementById("mousePrice").innerHTML = Game.mousePrice;
         		document.getElementById("mouseScore").innerHTML = Game.mouseScore;
@@ -244,13 +244,24 @@
         
         drawGame();
         updateMoney();
-        
+        save();
         
         document.getElementById("mousePrice").innerHTML = Game.mousePrice;
         document.getElementById("mouseScore").innerHTML = Game.mouseScore;
-        
-    </script>
-    <div id="snackbar">You need more money</div>
-	    
+       
+		//saving
+		function save(){
+			localStorage.setItem("save",JSON.stringify(Game)); 
+		}
+		function load(){
+			var savegame = JSON.parse(localStorage.getItem("save")); 
+			Game = savegame;
+		}
+		function deleteSave(){
+			localStorage.removeItem("save");
+		}
+	</script>
+   
+	     <div id="snackbar">You need more money</div>
 	    </body>
 	    </html>
