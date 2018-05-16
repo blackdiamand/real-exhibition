@@ -1,4 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+#snackbar {
+    visibility: hidden;
+    min-width: 250px;
+    margin-left: -125px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border-radius: 2px;
+    padding: 16px;
+    position: fixed;
+    z-index: 1;
+    left: 50%;
+    bottom: 30px;
+    font-size: 17px;
+}
 
+#snackbar.show {
+    visibility: visible;
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+@-webkit-keyframes fadein {
+    from {bottom: 0; opacity: 0;} 
+    to {bottom: 30px; opacity: 1;}
+}
+
+@keyframes fadein {
+    from {bottom: 0; opacity: 0;}
+    to {bottom: 30px; opacity: 1;}
+}
+
+@-webkit-keyframes fadeout {
+    from {bottom: 30px; opacity: 1;} 
+    to {bottom: 0; opacity: 0;}
+}
+
+@keyframes fadeout {
+    from {bottom: 30px; opacity: 1;}
+    to {bottom: 0; opacity: 0;}
+}
+</style>
+</head>
 
 <div style="float: left; width: 400px; height: 100%; border-right: 1px solid grey">
 <Br><Br>
@@ -78,7 +125,8 @@ function upgradeMouse(){
 
 	}
 	else{
-		alert("Not enough money");
+		toast();
+		
 	}
 }
 
@@ -128,7 +176,7 @@ function buy(selector){
 		Game.objects[selector][4] = Game.objects[selector][1] * Game.objects[selector][3];
 	}
 	else{
-		alert("Needs more money !");
+		toast();
 	}
 
 
@@ -172,6 +220,17 @@ function drawGame(){
 	}
 
 }
+	
+function toast() {
+    // Get the snackbar DIV
+    var x = document.getElementById("snackbar");
+
+    // Add the "show" class to DIV
+    x.className = "show";
+
+    // After 3 seconds, remove the show class from DIV
+    setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+}
 
 
 drawGame();
@@ -182,3 +241,5 @@ document.getElementById("mousePrice").innerHTML = Game.mousePrice;
 document.getElementById("mouseScore").innerHTML = Game.mouseScore;
 
 </script>
+	
+<div id="snackbar">You need more money</div>
