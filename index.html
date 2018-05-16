@@ -23,7 +23,7 @@
 <Br>
 <span style="padding: 12px; font-size: 22px"><b>More ?</b></span><br>
 
-<div class='item' onclick="upgradeMouse()"><div class='itemTitle'>Upgrade Mouse</div><div class='itemPrice' id="mousePrice">0</div><div class='itemDesc'>The mouse currently delivers <span id="mouseScore">1</span> parcels per click</div></div>
+<div class='item' onclick="upgradeMouse()"><div class='itemTitle'>Upgrade Mouse</div><div class='itemPrice' id="mousePrice">0</div><div class='itemDesc'>The mouse currently delivers <span id="mouseScore">1</span> articles per click</div></div>
 
 </div>
 <style>
@@ -165,10 +165,10 @@ function drawGame(){
 			price = "Click to spend " + Game.objects[object][2];
 		}
 		else{
-			price = "<span style='color: red'>&pound" +Game.objects[object][2]+"</span>";
+			price = "<span style='color: red'>$" +Game.objects[object][2]+"</span>";
 		} 
 
-		document.getElementById("items").innerHTML = document.getElementById("items").innerHTML + "<div class='item' onclick=buy('"+ object +"')><div class='itemTitle'>" + Game.objects[object][0] + "</div><div class='itemPrice'>"+ price +"</div><div class='itemDesc'>You have " +Game.objects[object][1]+" delivering " + (Game.objects[object][4]).toFixed(2) +" parcels a second</div></div>";
+		document.getElementById("items").innerHTML = document.getElementById("items").innerHTML + "<div class='item' onclick=buy('"+ object +"')><div class='itemTitle'>" + Game.objects[object][0] + "</div><div class='itemPrice'>"+ price +"</div><div class='itemDesc'>You have " +Game.objects[object][1]+" delivering " + (Game.objects[object][4]).toFixed(2) +" articles a second</div></div>";
 	}
 
 }
