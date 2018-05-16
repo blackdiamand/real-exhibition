@@ -244,7 +244,7 @@
         
         drawGame();
         updateMoney();
-        save();
+        
         
         document.getElementById("mousePrice").innerHTML = Game.mousePrice;
         document.getElementById("mouseScore").innerHTML = Game.mouseScore;
@@ -260,6 +260,14 @@
 		function deleteSave(){
 			localStorage.removeItem("save");
 		}
+	    
+
+		window.setInterval(function(){
+ 		 /// call your function here
+			save();
+		}, 10000);
+
+	
 	</script>
    
 	     <div id="snackbar">You need more money</div>
