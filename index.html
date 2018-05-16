@@ -52,6 +52,7 @@
     <div style="float: left; width: 400px; height: 100%; border-right: 1px solid grey">
         <Br><Br>
         <div class="itemTitle" style="text-align: center">$<span id="money"></span> <span style="font-size: 14px"></span> Cash</div>
+	<div class="itemTitle" style="text-align: center">$<span id="articles"></span> <span style="font-size: 14px"></span> Articles</div>	
         <div class="itemTitle" style="text-align: center"><span id="moneyPerSecond"></span> <span style="font-size: 14px">Profit per second</span></div>
         <Br><br>
         <div onclick="add();" style="width: 300px; background-color: #FFA500; height: 300px; border-radius: 50%; text-align: center; line-height: 60px; margin: auto">
@@ -144,15 +145,9 @@
         var Game = {
         	mouseScore : 1,
         	mousePrice : 100,
-        	villages : 0,
-        	towns : 0,
-        	cities : 0,
-        	planets : 0,
         	money : 0,
         	moneyPerSecond : 0,
         	population : 0,
-        	deliveries : 0,
-        	deliveriespersecond : 0,
         	price : 0,
         	objects : {
         
@@ -181,13 +176,13 @@
         function buy(selector){
         	if(Game.money >= Game.objects[selector][2]){
         		Game.money = Game.money - Game.objects[selector][2];
-        		// console.log(Game.objects[selector][1])
         		Game.objects[selector][1] = Game.objects[selector][1] + 1;
         		Game.objects[selector][2] = Number((Game.objects[selector][2] * 1.15).toFixed(2));
         		Game.objects[selector][4] = Game.objects[selector][1] * Game.objects[selector][3];
         	}
         	else{
         		toast();
+			//out of money
         	}
         
         
@@ -244,6 +239,7 @@
             // After 3 seconds, remove the show class from DIV
             setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
         }
+	
         
         
         drawGame();
@@ -255,4 +251,6 @@
         
     </script>
     <div id="snackbar">You need more money</div>
+	    
 	    </body>
+	    </html>
