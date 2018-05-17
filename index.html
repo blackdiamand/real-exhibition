@@ -128,6 +128,12 @@
             <div class='itemPrice' id="mousePrice">0</div>
             <div class='itemDesc'>The mouse currently gives <span id="mouseScore">1</span> articles per click</div>
         </div>
+        <div class='item' onclick="upgradeProduction()">
+            <div class='itemTitle'>Upgrade Production</div>
+            <div class='itemPrice' id="productionPrice">0</div>
+            <div class='itemDesc'>The mouse currently gives <span id="productionScore"></span> articles per click</div>
+        </div>
+            
     </div>
     
     <style>
@@ -181,10 +187,26 @@
 
             }
         }
+        function upgradeProduction() {
+
+            if (Game.productionPrice <= Game.money) {
+                Game.productionScore = Game.mouseScore * 2;
+                Game.productionPrice = Game.mousePrice * 1.64;
+                Game.moneyPerSecond = Game.moneyPerSecond * 1.64;
+                document.getElementById("productionPrice").innerHTML = Game.upgradePrice;
+                document.getElementById("productionScore").innerHTML = Game.mouseScore;
+
+            } else {
+                toast("needs more money  🤔 ");
+
+            }
+        }
 
         var Game = {
             mouseScore: 1,
             mousePrice: 100,
+            productionScore: 1,
+            productionPrice: 10000,
             money: 0,
             moneyPerSecond: 0,
             population: 0,
@@ -254,7 +276,7 @@
                 if (Game.objects[object][2] <= Game.money) {
                     price = "Click to spend " + Game.objects[object][2];
                 } else {
-                    price = "<span style='color: green'>$" + Game.objects[object][2] + "</span>";
+                    price = "<span style='color: red'>$" + Game.objects[object][2] + "</span>";
                 }
 
                 document.getElementById("items").innerHTML =
