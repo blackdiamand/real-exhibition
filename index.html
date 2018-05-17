@@ -76,6 +76,11 @@
                 opacity: 0;
             }
         }
+        #header-content {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        }       
     </style>
     <!–– favicon generator. WARNING––>
     <link rel="apple-touch-icon" sizes="57x57" href="fac3add563b01af7c4a95dd5af79226f.ico/apple-icon-57x57.png">
@@ -365,6 +370,7 @@
         }
 
         function deleteSave() {
+            confirm("Press a button!");
             localStorage.removeItem("save");
         }
 
@@ -376,7 +382,9 @@
     </script>
 
     <div id="snackbar">You need more money</div>
-
+    <div id="header-content">
+        <button type="button" onclick="deleteSave()">Delete save</button>
+    </div>
 </body>
 
 </html>
