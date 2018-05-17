@@ -132,7 +132,7 @@
         <div class='item' onclick="upgradeProduction()">
             <div class='itemTitle'>Upgrade Production</div>
             <div class='itemPrice' id="productionPrice">0</div>
-            <div class='itemDesc'>Multiplier: <span id="productionScore"></span></div>
+            <div class='itemDesc'>Multiplier: <span id="productionScore">1.00</span></div>
         </div>
             
     </div>
@@ -188,6 +188,7 @@
             if (Game.mousePrice <= Game.money) {
                 Game.mouseScore = Game.mouseScore * 2;
                 Game.mousePrice = Game.mousePrice * 1.64;
+                Game.money = Game.money - Game.mousePrice;
                 document.getElementById("mousePrice").innerHTML = Game.mousePrice;
                 document.getElementById("mouseScore").innerHTML = Game.mouseScore;
 
@@ -199,14 +200,15 @@
         function upgradeProduction() {
 
             if (Game.productionPrice <= Game.money) {
-                Game.productionScore = Game.productionScore * 2;
+                Game.money = Game.money - Game.mousePrice;
+                Game.productionScore = Game.productionScore + 0.14;
                 Game.productionPrice = Game.productionPrice * 6.4;
-                Game.moneyPerSecond = Game.moneyPerSecond * 1.64;
+                Game.moneyPerSecond = Game.moneyPerSecond * Game.productionScore;
                 document.getElementById("productionPrice").innerHTML = Game.productionPrice;
                 document.getElementById("productionScore").innerHTML = Game.productionScore;
 
             } else {
-                toast("needs more money  🤔 ");
+                toast("can't upgrade 🤔 ");
 
             }
         }
@@ -214,8 +216,8 @@
         var Game = {
             mouseScore: 1,
             mousePrice: 100,
-            productionScore: 1,
-            productionPrice: 10000,
+            productionScore: 1.00,
+            productionPrice: 1000,
             money: 0,
             moneyPerSecond: 0,
             population: 0,
@@ -306,7 +308,7 @@
             for (object in Game.objects) {
 
                 if (Game.objects[object][2] <= Game.money) {
-                    price = "<span style='color: green'>"+"Click to spend " + Game.objects[object][2];
+                    price = "<span style='color: green'>"+"Click to spend " +  "$" +Game.objects[object][2];
                 } else {
                     price = "<span style='color: red'>$" + Game.objects[object][2] + "</span>";
                 }
