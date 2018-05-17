@@ -3,86 +3,14 @@
 <html>
 
 <head>
-
+    <link rel="stylesheet" type="text/css" href="stylesheet.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="UTF-8">
     <meta name="description" content="Nice meta description you got there! This is a game about wikipedia!">
     <meta name="keywords" content="HTML,CSS,JavaScript">
     <meta name="author" content="Kevin">
     <title>The Wikipedia Adventure part 2 (WIP)</title>
-    <style>
-        #snackbar {
-            visibility: hidden;
-            min-width: 250px;
-            margin-left: -125px;
-            background-color: #333;
-            color: #fff;
-            text-align: center;
-            border-radius: 2px;
-            padding: 16px;
-            position: fixed;
-            z-index: 1;
-            left: 50%;
-            bottom: 30px;
-            font-size: 17px;
-        }
-        
-        #snackbar.show {
-            visibility: visible;
-            -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
-            animation: fadein 0.5s, fadeout 0.5s 2.5s;
-        }
-        
-        @-webkit-keyframes fadein {
-            from {
-                bottom: 0;
-                opacity: 0;
-            }
-            to {
-                bottom: 30px;
-                opacity: 1;
-            }
-        }
-        
-        @keyframes fadein {
-            from {
-                bottom: 0;
-                opacity: 0;
-            }
-            to {
-                bottom: 30px;
-                opacity: 1;
-            }
-        }
-        
-        @-webkit-keyframes fadeout {
-            from {
-                bottom: 30px;
-                opacity: 1;
-            }
-            to {
-                bottom: 0;
-                opacity: 0;
-            }
-        }
-        
-        @keyframes fadeout {
-            from {
-                bottom: 30px;
-                opacity: 1;
-            }
-            to {
-                bottom: 0;
-                opacity: 0;
-            }
-        }
-        #header-content {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        }       
-    </style>
-    <!–– favicon generator. WARNING––>
+    <!–– favicon generator. ––>
     <link rel="apple-touch-icon" sizes="57x57" href="fac3add563b01af7c4a95dd5af79226f.ico/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="fac3add563b01af7c4a95dd5af79226f.ico/apple-icon-60x60.png">
     <link rel="apple-touch-icon" sizes="72x72" href="fac3add563b01af7c4a95dd5af79226f.ico/apple-icon-72x72.png">
@@ -102,7 +30,9 @@
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
+    
     <!--<link rel="shortcut icon" type="image/png" href="/Piggle blaster.png"/>-->
+    
 </head>
 
 <body onload="load()" style="background-color:#E6E6FA">
