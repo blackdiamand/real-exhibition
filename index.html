@@ -239,6 +239,16 @@
             // After 3 seconds, remove the show class from DIV
             setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
         }
+	    function saveToast() {
+            // Get the snackbar DIV
+            var x = document.getElementById("savegame");
+        
+            // Add the "show" class to DIV
+            x.className = "show";
+        
+            // After 3 seconds, remove the show class from DIV
+            setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+        }
 	
         
         
@@ -252,6 +262,8 @@
 		//saving
 		function save(){
 			localStorage.setItem("save",JSON.stringify(Game)); 
+			console.log("saved");
+			saveToast();
 		}
 		function load(){
 			if (localStorage.getItem("save") === null) {
@@ -270,11 +282,12 @@
 		window.setInterval(function(){
  		 /// call your function here
 			save();
-		}, 10000);
+		}, 30000);
 
 	
 	</script>
    
 	     <div id="snackbar">You need more money</div>
+	    <div id="savegame">Game saved! (autosaves every 30 seconds) </div>
 	    </body>
 	    </html>
