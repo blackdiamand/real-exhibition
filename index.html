@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html>
-    <head>
-	    
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta charset="UTF-8">
-        <meta name="description" content="Nice meta description you got there">
-        <meta name="keywords" content="HTML,CSS,JavaScript">
-        <meta name="author" content="Kevin">
-	<title>The Wikipedia Adventure part 2 </title>
-        <style>
-            #snackbar {
+
+<head>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <meta name="description" content="Nice meta description you got there">
+    <meta name="keywords" content="HTML,CSS,JavaScript">
+    <meta name="author" content="Kevin">
+    <title>The Wikipedia Adventure part 2 </title>
+    <style>
+        #snackbar {
             visibility: hidden;
             min-width: 250px;
             margin-left: -125px;
@@ -23,50 +24,84 @@
             left: 50%;
             bottom: 30px;
             font-size: 17px;
-            }
-            #snackbar.show {
+        }
+        
+        #snackbar.show {
             visibility: visible;
             -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
             animation: fadein 0.5s, fadeout 0.5s 2.5s;
+        }
+        
+        @-webkit-keyframes fadein {
+            from {
+                bottom: 0;
+                opacity: 0;
             }
-            @-webkit-keyframes fadein {
-            from {bottom: 0; opacity: 0;} 
-            to {bottom: 30px; opacity: 1;}
+            to {
+                bottom: 30px;
+                opacity: 1;
             }
-            @keyframes fadein {
-            from {bottom: 0; opacity: 0;}
-            to {bottom: 30px; opacity: 1;}
+        }
+        
+        @keyframes fadein {
+            from {
+                bottom: 0;
+                opacity: 0;
             }
-            @-webkit-keyframes fadeout {
-            from {bottom: 30px; opacity: 1;} 
-            to {bottom: 0; opacity: 0;}
+            to {
+                bottom: 30px;
+                opacity: 1;
             }
-            @keyframes fadeout {
-            from {bottom: 30px; opacity: 1;}
-            to {bottom: 0; opacity: 0;}
+        }
+        
+        @-webkit-keyframes fadeout {
+            from {
+                bottom: 30px;
+                opacity: 1;
             }
-        </style>
-    </head>
-	<body onload="load();">
-    
+            to {
+                bottom: 0;
+                opacity: 0;
+            }
+        }
+        
+        @keyframes fadeout {
+            from {
+                bottom: 30px;
+                opacity: 1;
+            }
+            to {
+                bottom: 0;
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+
+<body onload="load();">
+
     <div style="float: left; width: 400px; height: 100%; border-right: 1px solid grey">
-        <Br><Br>
+        <Br>
+        <Br>
         <div class="itemTitle" style="text-align: center">$<span id="money"></span> <span style="font-size: 14px"></span> Cash</div>
-	<div class="itemTitle" style="text-align: center"><span id="moneyPerSecond"></span> <span style="font-size: 14px">Articles per second</span></div>	
+        <div class="itemTitle" style="text-align: center"><span id="moneyPerSecond"></span> <span style="font-size: 14px">Articles per second</span></div>
         <div class="itemTitle" style="text-align: center"><span id="moneyPerSecond"></span> <span style="font-size: 14px">Profit per second</span></div>
-        <Br><br>
+        <Br>
+        <br>
         <div onclick="add();" style="width: 300px; background-color: #FFA500; height: 300px; border-radius: 50%; text-align: center; line-height: 60px; margin: auto">
             <br><img src="hech.svg" style="text-align: center; margin: auto; width: 160px;display: inline-block">
         </div>
     </div>
     <div style="float: left; width: 270px; height: 100%">
         <Br>
-        <span style="padding: 12px; font-size: 22px"><b>Buy Items</b></span><br>
+        <span style="padding: 12px; font-size: 22px"><b>Buy Items</b></span>
+        <br>
         <div id="items"></div>
     </div>
     <div style="float: left; width: calc(100vw - 720px); height: 100%">
         <Br>
-        <span style="padding: 12px; font-size: 22px"><b>Upgrades</b></span><br>
+        <span style="padding: 12px; font-size: 22px"><b>Upgrades</b></span>
+        <br>
         <div class='item' onclick="upgradeMouse()">
             <div class='itemTitle'>Upgrade Mouse</div>
             <div class='itemPrice' id="mousePrice">0</div>
@@ -83,7 +118,7 @@
     <link rel="apple-touch-icon" sizes="144x144" href="fac3add563b01af7c4a95dd5af79226f.ico/apple-icon-144x144.png">
     <link rel="apple-touch-icon" sizes="152x152" href="fac3add563b01af7c4a95dd5af79226f.ico/apple-icon-152x152.png">
     <link rel="apple-touch-icon" sizes="180x180" href="fac3add563b01af7c4a95dd5af79226f.ico/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192"  href="fac3add563b01af7c4a95dd5af79226f.ico/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="fac3add563b01af7c4a95dd5af79226f.ico/android-icon-192x192.png">
     <link rel="icon" type="image/png" sizes="32x32" href="fac3add563b01af7c4a95dd5af79226f.ico/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="96x96" href="fac3add563b01af7c4a95dd5af79226f.ico/favicon-96x96.png">
     <link rel="icon" type="image/png" sizes="16x16" href="fac3add563b01af7c4a95dd5af79226f.ico/favicon-16x16.png">
@@ -92,202 +127,187 @@
     <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
     <style>
-        *{
-        font-family: Consolas;
-        padding: 0px;
-        margin: 0px;
+        * {
+            font-family: Consolas;
+            padding: 0px;
+            margin: 0px;
         }
-        .item{
-        width: 240px;
-        height: 80px;
+        
+        .item {
+            width: 240px;
+            height: 80px;
         }
-        .itemTitle{
-        width: 100%;
-        height: 22px;
-        line-height: 35px;
-        font-size: 17px;
-        padding: 4px;
-        padding-left: 12px;
+        
+        .itemTitle {
+            width: 100%;
+            height: 22px;
+            line-height: 35px;
+            font-size: 17px;
+            padding: 4px;
+            padding-left: 12px;
         }
-        .itemPrice, .itemDesc{
-        width: 100%;
-        height: 12px;
-        font-size: 12px;
-        padding: 4px;
-        color: yellow;
-        padding-left: 12px;
+        
+        .itemPrice,
+        .itemDesc {
+            width: 100%;
+            height: 12px;
+            font-size: 12px;
+            padding: 4px;
+            color: yellow;
+            padding-left: 12px;
         }
-        .itemDesc{
-        color: grey;
+        
+        .itemDesc {
+            color: grey;
         }
     </style>
     <script>
         // Name, amount, price, output, total output
-        
-        
-        
-        function upgradeMouse(){
-        
-        	if(Game.mousePrice <= Game.money){
-        		Game.mouseScore = Game.mouseScore * 2;
-        		Game.mousePrice = Game.mousePrice * 1.64;
-        		document.getElementById("mousePrice").innerHTML = Game.mousePrice;
-        		document.getElementById("mouseScore").innerHTML = Game.mouseScore;
-        
-        
-        	}
-        	else{
-        		toast();
-        		
-        	}
+
+        function upgradeMouse() {
+
+            if (Game.mousePrice <= Game.money) {
+                Game.mouseScore = Game.mouseScore * 2;
+                Game.mousePrice = Game.mousePrice * 1.64;
+                document.getElementById("mousePrice").innerHTML = Game.mousePrice;
+                document.getElementById("mouseScore").innerHTML = Game.mouseScore;
+
+            } else {
+                toast();
+
+            }
         }
-        
+
         var Game = {
-        	mouseScore : 1,
-        	mousePrice : 100,
-        	money : 0,
-        	moneyPerSecond : 0,
-        	population : 0,
-        	price : 0,
-        	objects : {
-        
-        		stub : ["Stub", 0, 5, 0.1, 0],
-        		start : ["Start", 0, 10, 1, 0],
-        		c: ["C", 0, 110, 8, 0],
-        		b : ["B", 0, 1200, 47, 0],
-        		ga : ["GA", 0, 1300, 260, 0],
-        		fa : ["FA", 0, 14000, 1400, 0],
-        		transparent : ["Transparent", 0, 200000, 7800, 0],
-        		hgv : ["Free", 0, 3300000, 44000, 0],
-        		double : ["Background info", 0, 51000000, 260000, 0],
-        		startingpoint : ["Starting point", 0, 750000000, 1600000, 0],
-        		reliable : ["Reliable source", 0, 10000000000, 10000000, 0],
-        		npov : ["NPOV", 0, 140000000000, 65000000, 0],
-        	}
-        
+            mouseScore: 1,
+            mousePrice: 100,
+            money: 0,
+            moneyPerSecond: 0,
+            population: 0,
+            price: 0,
+            objects: {
+
+                stub: ["Stub", 0, 5, 0.1, 0],
+                start: ["Start", 0, 10, 1, 0],
+                c: ["C", 0, 110, 8, 0],
+                b: ["B", 0, 1200, 47, 0],
+                ga: ["GA", 0, 1300, 260, 0],
+                fa: ["FA", 0, 14000, 1400, 0],
+                transparent: ["Transparent", 0, 200000, 7800, 0],
+                hgv: ["Free", 0, 3300000, 44000, 0],
+                double: ["Background info", 0, 51000000, 260000, 0],
+                startingpoint: ["Starting point", 0, 750000000, 1600000, 0],
+                reliable: ["Reliable source", 0, 10000000000, 10000000, 0],
+                npov: ["NPOV", 0, 140000000000, 65000000, 0],
+            }
+
         }
-        
-        function add(){
-        
-        	Game.money = Game.money + Game.mouseScore;
-        
+
+        function add() {
+
+            Game.money = Game.money + Game.mouseScore;
+
         }
-        
-        function buy(selector){
-        	if(Game.money >= Game.objects[selector][2]){
-        		Game.money = Game.money - Game.objects[selector][2];
-        		Game.objects[selector][1] = Game.objects[selector][1] + 1;
-        		Game.objects[selector][2] = Number((Game.objects[selector][2] * 1.14).toFixed(2));
-        		Game.objects[selector][4] = Game.objects[selector][1] * Game.objects[selector][3];
-        	}
-        	else{
-        		toast();
-			//out of money
-        	}
-        
-        
+
+        function buy(selector) {
+            if (Game.money >= Game.objects[selector][2]) {
+                Game.money = Game.money - Game.objects[selector][2];
+                Game.objects[selector][1] = Game.objects[selector][1] + 1;
+                Game.objects[selector][2] = Number((Game.objects[selector][2] * 1.14).toFixed(2));
+                Game.objects[selector][4] = Game.objects[selector][1] * Game.objects[selector][3];
+            } else {
+                toast("You ran out of money!");
+                //out of money
+            }
+
         }
-        
-        
-        
-        function updateMoney(){
-        
-        	temporary = 0;
-        
-        	for(object in Game.objects){
-        		// console.log(Game.objects[object][4])
-        		temporary = temporary + (Game.objects[object][4] / 10) ;
-        	}
-        	Game.moneyPerSecond = temporary;
-        
-        	Game.money = Number((Game.money + Game.moneyPerSecond).toFixed(2));
-        	document.getElementById("money").innerHTML = Game.money.toFixed(2);
-        	Game.moneyPerSecond = Number(Game.moneyPerSecond.toFixed(2));
-        	document.getElementById("moneyPerSecond").innerHTML = (Game.moneyPerSecond * 10).toFixed(2);
-        	drawGame();
-        	setTimeout( updateMoney, 100);
-        
+
+        function updateMoney() {
+
+            temporary = 0;
+
+            for (object in Game.objects) {
+                // console.log(Game.objects[object][4])
+                temporary = temporary + (Game.objects[object][4] / 10);
+            }
+            Game.moneyPerSecond = temporary;
+
+            Game.money = Number((Game.money + Game.moneyPerSecond).toFixed(2));
+            document.getElementById("money").innerHTML = Game.money.toFixed(2);
+            Game.moneyPerSecond = Number(Game.moneyPerSecond.toFixed(2));
+            document.getElementById("moneyPerSecond").innerHTML = (Game.moneyPerSecond * 10).toFixed(2);
+            drawGame();
+            setTimeout(updateMoney, 100);
+
         }
-        
-        function drawGame(){
-        
-        	document.getElementById("items").innerHTML = "";
-        
-        	for(object in Game.objects){
-        
-        		if(Game.objects[object][2] <= Game.money){ 
-        			price = "Click to spend " + Game.objects[object][2];
-        		}
-        		
-        		else{
-        			price = "<span style='color: green'>$" +Game.objects[object][2]+"</span>";
-        		} 
-        
-        		document.getElementById("items").innerHTML = 
-        		document.getElementById("items").innerHTML + "<div class='item' onclick=buy('"+ object +"')><div class='itemTitle'>" + Game.objects[object][0] + "</div><div class='itemPrice'>"+ price +"</div><div class='itemDesc'>You have " +Game.objects[object][1]+" giving " + (Game.objects[object][4]).toFixed(2) +" articles a second</div></div>";
-        	}
-        
+
+        function drawGame() {
+
+            document.getElementById("items").innerHTML = "";
+
+            for (object in Game.objects) {
+
+                if (Game.objects[object][2] <= Game.money) {
+                    price = "Click to spend " + Game.objects[object][2];
+                } else {
+                    price = "<span style='color: green'>$" + Game.objects[object][2] + "</span>";
+                }
+
+                document.getElementById("items").innerHTML =
+                    document.getElementById("items").innerHTML + "<div class='item' onclick=buy('" + object + "')><div class='itemTitle'>" + Game.objects[object][0] + "</div><div class='itemPrice'>" + price + "</div><div class='itemDesc'>You have " + Game.objects[object][1] + " giving " + (Game.objects[object][4]).toFixed(2) + " articles a second</div></div>";
+            }
+
         }
-        	
-        function toast() {
+
+        function toast(text) {
             // Get the snackbar DIV
             var x = document.getElementById("snackbar");
-        
+
             // Add the "show" class to DIV
             x.className = "show";
-        
+            x.innerHTML = text;
             // After 3 seconds, remove the show class from DIV
-            setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+            setTimeout(function() {
+                x.className = x.className.replace("show", "");
+            }, 3000);
         }
-	    function saveToast() {
-            // Get the snackbar DIV
-            var x = document.getElementById("savegame");
-        
-            // Add the "show" class to DIV
-            x.className = "show";
-        
-            // After 3 seconds, remove the show class from DIV
-            setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
-        }
-	
-        
-        
+
         drawGame();
         updateMoney();
-        
-        
+
         document.getElementById("mousePrice").innerHTML = Game.mousePrice;
         document.getElementById("mouseScore").innerHTML = Game.mouseScore;
-       
-		//saving
-		function save(){
-			localStorage.setItem("save",JSON.stringify(Game)); 
-			console.log("saved");
-			saveToast();
-		}
-		function load(){
-			if (localStorage.getItem("save") === null) {
- 				 //...
-			
-			var savegame = JSON.parse(localStorage.getItem("save")); 
-			
-			Game = savegame;
-			}
-		}
-		function deleteSave(){
-			localStorage.removeItem("save");
-		}
-	    
 
-		window.setInterval(function(){
- 		 /// call your function here
-			save();
-		}, 30000);
+        //saving
+        function save() {
+            localStorage.setItem("save", JSON.stringify(Game));
+            console.log("saved");
+            toast("Game saved! (autosaves every 30 seconds)");
 
-	
-	</script>
-   
-	     <div id="snackbar">You need more money</div>
-	    <div id="savegame">Game saved! (autosaves every 30 seconds) </div>
-	    </body>
-	    </html>
+        }
+
+        function load() {
+            if (localStorage.getItem("save") === null) {
+                //...
+
+                var savegame = JSON.parse(localStorage.getItem("save"));
+
+                Game = savegame;
+            }
+        }
+
+        function deleteSave() {
+            localStorage.removeItem("save");
+        }
+
+        window.setInterval(function() {
+            /// call your function here
+            save();
+        }, 30000);
+    </script>
+
+    <div id="snackbar">You need more money</div>
+
+</body>
+
+</html>
