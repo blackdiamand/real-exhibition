@@ -190,8 +190,8 @@
         function upgradeProduction() {
 
             if (Game.productionPrice <= Game.money) {
-                Game.productionScore = Game.mouseScore * 2;
-                Game.productionPrice = Game.mousePrice * 1.64;
+                Game.productionScore = Game.productionScore * 2;
+                Game.productionPrice = Game.productionPrice * 1.64;
                 Game.moneyPerSecond = Game.moneyPerSecond * 1.64;
                 document.getElementById("productionPrice").innerHTML = Game.upgradePrice;
                 document.getElementById("productionScore").innerHTML = Game.mouseScore;
