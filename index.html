@@ -302,6 +302,9 @@
         function deleteSave() {
             confirm("Are you sure?");
             localStorage.removeItem("save");
+            location.reload(true);
+            location.reload(false);
+            //for good measure
         }
 
         window.setInterval(function() {
