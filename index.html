@@ -131,7 +131,7 @@
         <div class='item' onclick="upgradeProduction()">
             <div class='itemTitle'>Upgrade Production</div>
             <div class='itemPrice' id="productionPrice">0</div>
-            <div class='itemDesc'>The mouse currently gives <span id="productionScore"></span> articles per click</div>
+            <div class='itemDesc'>Multiplier: <span id="productionScore"></span></div>
         </div>
             
     </div>
@@ -193,8 +193,8 @@
                 Game.productionScore = Game.productionScore * 2;
                 Game.productionPrice = Game.productionPrice * 1.64;
                 Game.moneyPerSecond = Game.moneyPerSecond * 1.64;
-                document.getElementById("productionPrice").innerHTML = Game.upgradePrice;
-                document.getElementById("productionScore").innerHTML = Game.mouseScore;
+                document.getElementById("productionPrice").innerHTML = Game.productionPrice;
+                document.getElementById("productionScore").innerHTML = Game.productionScore;
 
             } else {
                 toast("needs more money  🤔 ");
@@ -274,7 +274,7 @@
             for (object in Game.objects) {
 
                 if (Game.objects[object][2] <= Game.money) {
-                    price = "Click to spend " + Game.objects[object][2];
+                    price = "<span style='color: green'>$"+"Click to spend " + Game.objects[object][2];
                 } else {
                     price = "<span style='color: red'>$" + Game.objects[object][2] + "</span>";
                 }
@@ -336,6 +336,7 @@
             /// call your function here
             save();
         }, 30000);
+        //30000 ms or 30 sec
     </script>
 
     <div id="snackbar">You need more money</div>
