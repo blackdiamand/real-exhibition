@@ -365,10 +365,15 @@
         }
 
         function deleteSave() {
-            confirm("Are you sure?");
-            localStorage.removeItem("save");
-            location.reload(true);
-            location.reload(false);
+            if(confirm("Are you sure?")){
+                toast("deleted save");
+                localStorage.removeItem("save");
+                location.reload(true);
+                location.reload(false);
+            }
+            if(confirm("Are you sure?")){
+                toast("🦔canceled);
+            }
             //for good measure
         }
 
