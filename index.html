@@ -345,7 +345,7 @@
             localStorage.setItem("save", JSON.stringify(Game));
             console.log("saved");
             console.log(JSON.parse(localStorage.getItem("save")));
-            toast("Game saved! autosaves every 30 seconds");
+            toast("Game saved! (autosaves every 30 seconds)");
 
         }
 
@@ -357,7 +357,7 @@
 
                 Game = savegame;
                 console.log("yer game loaded");
-                toast("you loaded yer game");
+                toast("loaded your game");
             }
             else{
                 toast("no save found");
