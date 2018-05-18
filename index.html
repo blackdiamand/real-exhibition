@@ -309,7 +309,7 @@
             for (object in Game.objects) {
 
                 if (Game.objects[object][2] <= Game.money) {
-                    price = "<span style='color: green;background-color:green'>" + +"Click to spend " +  "$" +Game.objects[object][2];
+                    price = "<span style='background-color:green;color: green'>" + +"Click to spend " +  "$" +Game.objects[object][2];
                 } else {
                     price = "<span style='color: red'>$" +  Game.objects[object][2] + "</span>";
                 }
