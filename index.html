@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <!--6464-->
 <html>
@@ -176,7 +175,7 @@
         <div class='item' onclick="upgradeProduction()">
             <div class='itemTitle'>Upgrade Multiplier</div>
             <div class='itemPrice' id="productionPrice">10000</div>
-            <div class='itemDesc'>Money Multiplier: <span id="productionScore">1.00</span></div>
+            <div class='itemDesc'>Multiplier: <span id="productionScore">1.00</span></div>
         </div>
             
     </div>
@@ -305,13 +304,13 @@
         function drawGame() {
 
             document.getElementById("items").innerHTML = "";
-            
+
             for (object in Game.objects) {
 
                 if (Game.objects[object][2] <= Game.money) {
-                    price = "<span style='background-color:green;color: blue'>" + +"Click to spend " +  "$" +Game.objects[object][2];
+                    price = "<span style='color: green'>"+"Click to spend " +  "$" +Game.objects[object][2];
                 } else {
-                    price = "<span style='color: red'>$" +  Game.objects[object][2] + "</span>";
+                    price = "<span style='color: red'>$" + Game.objects[object][2] + "</span>";
                 }
 
                 document.getElementById("items").innerHTML =
