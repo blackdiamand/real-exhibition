@@ -323,6 +323,16 @@
                 document.getElementById("items").innerHTML =
                     document.getElementById("items").innerHTML + "<div class='item' onclick=buy('" + object + "')><div class='itemTitle'>" + Game.objects[object][0] + "</div><div class='itemPrice'>" + price + "</div><div class='itemDesc'>You have " + Game.objects[object][1] + " giving " + (Game.objects[object][4]).toFixed(2) + " articles a second</div></div>";
             }
+            /*
+            if(Game.money < Game.mousePrice){
+                document.getElementById("itemPrice").innerHTML = "<span style='color: red'>"+ "$" + Game.mousePrice;
+            }
+            else{
+                
+                
+            }
+            if()
+            */
 
         }
 
@@ -351,7 +361,7 @@
         function save() {
             localStorage.setItem("save", JSON.stringify(Game));
             console.log("saved");
-            console.log(JSON.parse(localStorage.getItem("save")));
+            //console.log(JSON.parse(localStorage.getItem("save")));
             toast("Game saved! (autosaves every 30 seconds)");
 
         }
