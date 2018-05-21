@@ -325,10 +325,10 @@
             }
             
             if(Game.money < Game.mousePrice){
-                document.getElementById("itemPrice").innerHTML = "<span style='color: red'>"+ "$" + Game.mousePrice;
+                document.getElementById("mousePrice").innerHTML = "<span style='color: red'>"+ "$" + Game.mousePrice;
             }
             else{
-                document.getElementById("itemPrice").innerHTML = "<span style='color: green'>"+ "$" + Game.mousePrice;
+                document.getElementById("mousePrice").innerHTML = "<span style='color: green'>"+ "$" + Game.mousePrice;
                 
                 
             }
@@ -359,10 +359,10 @@
         drawGame();
         updateMoney();
 
-        document.getElementById("mousePrice").innerHTML = Game.mousePrice;
-        document.getElementById("mouseScore").innerHTML = Game.mouseScore;
-        document.getElementById("productionPrice").innerHTML = Game.productionPrice;
-        document.getElementById("productionScore").innerHTML = Game.productionScore;
+        //document.getElementById("mousePrice").innerHTML = Game.mousePrice;
+        //document.getElementById("mouseScore").innerHTML = Game.mouseScore;
+        //document.getElementById("productionPrice").innerHTML = Game.productionPrice;
+        //document.getElementById("productionScore").innerHTML = Game.productionScore;
 
         //saving
         function save() {
@@ -416,7 +416,7 @@
     <div id="header-content">
         <button type="button" onclick="deleteSave()">Delete save</button>
     </div>
-        <audio autoplay loop> <source src="deadlocked2.wav" type="audio/wav"> </audio> <!--heehe easter egg-->
+        <audio autoplay loop> <source src="deadlocked2.wav" type="audio/wav"> </audio> <!--heehe easter egg at really low volume-->
 </body>
 
 </html>
