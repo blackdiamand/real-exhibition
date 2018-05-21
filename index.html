@@ -323,16 +323,23 @@
                 document.getElementById("items").innerHTML =
                     document.getElementById("items").innerHTML + "<div class='item' onclick=buy('" + object + "')><div class='itemTitle'>" + Game.objects[object][0] + "</div><div class='itemPrice'>" + price + "</div><div class='itemDesc'>You have " + Game.objects[object][1] + " giving " + (Game.objects[object][4]).toFixed(2) + " articles a second</div></div>";
             }
-            /*
+            
             if(Game.money < Game.mousePrice){
                 document.getElementById("itemPrice").innerHTML = "<span style='color: red'>"+ "$" + Game.mousePrice;
             }
             else{
+                document.getElementById("itemPrice").innerHTML = "<span style='color: green'>"+ "$" + Game.mousePrice;
                 
                 
             }
-            if()
-            */
+            if(Game.money < Game.productionPrice){
+                document.getElementById("productionPrice").innerHTML = "<span style='color: red'>"+ "$" + Game.productionPrice;
+            }
+            else{
+                document.getElementById("productionPrice").innerHTML = "<span style='color: green'>"+ "$" + Game.productionPrice;
+                
+                
+            }
 
         }
 
