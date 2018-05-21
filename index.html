@@ -189,7 +189,7 @@
                 Game.mouseScore = Game.mouseScore * 2;
                 Game.mousePrice = Game.mousePrice * 1.64;
                 Game.money = Game.money - Game.mousePrice;
-                document.getElementById("mousePrice").innerHTML = Game.mousePrice;
+                document.getElementById("mousePrice").innerHTML = "$"+Game.mousePrice;
                 document.getElementById("mouseScore").innerHTML = Game.mouseScore;
 
             } else {
@@ -204,7 +204,7 @@
                 Game.productionScore = Game.productionScore + 0.14;
                 Game.productionPrice = Game.productionPrice * 6.4;
                 Game.moneyPerSecond = Game.moneyPerSecond * Game.productionScore;
-                document.getElementById("productionPrice").innerHTML = Game.productionPrice;
+                document.getElementById("productionPrice").innerHTML = "$"+Game.productionPrice;
                 document.getElementById("productionScore").innerHTML = Game.productionScore;
 
             } else {
